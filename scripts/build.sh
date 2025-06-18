@@ -1,0 +1,1 @@
+go build -o build/expense-tracker-api cmd/expense-tracker/main.go
