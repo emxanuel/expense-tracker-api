@@ -17,8 +17,8 @@ func main() {
 	}
 
 	r := gin.Default()
-	database_config.Connect()
-	routes.RegisterRoutes(r)
+	db := database_config.Connect()
+	routes.RegisterRoutes(r, db)
 
 	r.Run()
 }

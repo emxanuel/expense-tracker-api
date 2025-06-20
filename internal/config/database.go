@@ -11,7 +11,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func Connect() {
+func Connect() *gorm.DB {
 	var (
 		host     = os.Getenv("DB_HOST")
 		port     = os.Getenv("DB_PORT")
@@ -46,4 +46,6 @@ func Connect() {
 	}
 
 	fmt.Println("Database connected")
+
+	return db
 }
