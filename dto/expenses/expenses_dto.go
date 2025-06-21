@@ -9,3 +9,12 @@ type GetExpensesItem struct {
 	Date     time.Time
 	Type     string
 }
+
+type CreateExpenseBody struct {
+	CategoryID uint
+	UserID     uint
+	Amount     float64
+	Note       string
+	Date       time.Time
+	Type       string
+}

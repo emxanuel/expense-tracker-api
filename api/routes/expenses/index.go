@@ -14,6 +14,7 @@ func RegisterExpensesRoutes(router *gin.Engine, db *gorm.DB) {
 	expensesHandler := expenses_handler.NewExpensesHandler(expensesRepository)
 	{
 		expensesRoutes.GET("", expensesHandler.GetExpensesHandler)
+		expensesRoutes.POST("", expensesHandler.CreateExpenseHanlder)
 	}
 
 }
