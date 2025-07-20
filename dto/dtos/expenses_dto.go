@@ -1,4 +1,4 @@
-package expenses_dto
+package dtos
 
 import "time"
 

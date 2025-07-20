@@ -2,7 +2,7 @@ package expenses_routes
 
 import (
 	expenses_handler "expense-tracker/api/internal/handlers/expenses"
-	expenses_repository "expense-tracker/api/internal/repositories"
+	expenses_repository "expense-tracker/api/internal/repositories/expenses"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

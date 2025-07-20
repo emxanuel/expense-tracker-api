@@ -1,7 +1,7 @@
 package expenses_handler
 
 import (
-	expenses_dto "expense-tracker/api/dto/expenses"
+	expenses_dto "expense-tracker/api/dto/dtos"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

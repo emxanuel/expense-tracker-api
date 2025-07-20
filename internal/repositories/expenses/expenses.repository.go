@@ -1,7 +1,7 @@
 package expenses_repository
 
 import (
-	expenses_dto "expense-tracker/api/dto/expenses"
+	"expense-tracker/api/dto/dtos"
 	"expense-tracker/api/models"
 	"time"
 
@@ -16,8 +16,8 @@ func NewExpensesRepository(db *gorm.DB) *ExpensesRepository {
 	return &ExpensesRepository{DB: db}
 }
 
-func (r *ExpensesRepository) GetExpenses() ([]expenses_dto.GetExpensesItem, error) {
-	var expenses []expenses_dto.GetExpensesItem
+func (r *ExpensesRepository) GetExpenses() ([]dtos.GetExpensesItem, error) {
+	var expenses []dtos.GetExpensesItem
 
 	if err := r.DB.Table("transactions t").
 		Joins("inner join categories c on c.id = t.category_id").
@@ -29,8 +29,8 @@ func (r *ExpensesRepository) GetExpenses() ([]expenses_dto.GetExpensesItem, erro
 	return expenses, nil
 }
 
-func (r *ExpensesRepository) CreateExpense(expense expenses_dto.CreateExpenseBody) (*expenses_dto.GetExpensesItem, error) {
-	var createdExpense *expenses_dto.GetExpensesItem
+func (r *ExpensesRepository) CreateExpense(expense dtos.CreateExpenseBody) (*dtos.GetExpensesItem, error) {
+	var createdExpense *dtos.GetExpensesItem
 	tx := &models.Transactions{
 		Amount:     expense.Amount,
 		UserID:     expense.UserID,

@@ -5,7 +5,7 @@ import "time"
 type Budgets struct {
 	ID         uint      `gorm:"primaryKey"`
 	UserID     uint      `gorm:"column:user_id"`
-	CategoryID uint      `gorm:"column:user_id"`
+	CategoryID uint      `gorm:"column:category_id"`
 	Month      time.Time `gorm:"type:date"`
 	Amount     float64   `gorm:"type:decimal(10,2)"`
 	CreatedAt  time.Time `gorm:"column:created_at;type:timestamptz"`
